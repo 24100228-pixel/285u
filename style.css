@@ -1,0 +1,80 @@
+/* Thiết lập cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ------------------------------------------------------------------- */
+/* BƯỚC 3: Liên kết "Skip to Main Content" (chỉ hiển thị khi focus) */
+.skip-link {
+    position: absolute; /* BƯỚC 3: Sử dụng thuộc tính position */
+    left: -9999px;      /* Đẩy ra khỏi tầm nhìn */
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -1;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* BƯỚC 3: Sử dụng pseudo-class focus để hiển thị */
+.skip-link:focus {
+    position: static;   
+    width: auto;
+    height: auto;
+    overflow: visible;
+    z-index: 1000;
+}
+
+/* ------------------------------------------------------------------- */
+/* BƯỚC 4 & 7: Thanh điều hướng (sử dụng Flexbox) */
+.main-nav {
+    background-color: #333; /* BƯỚC 4: Thuộc tính CSS #1 */
+    padding: 10px 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* BƯỚC 7: Áp dụng Flexbox - BƯỚC 4: Thuộc tính CSS #2 */
+    justify-content: center; /* BƯỚC 4: Thuộc tính CSS #3 */
+}
+
+.main-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease; 
+}
+
+.main-nav li a:hover {
+    background-color: #555; /* Đổi màu nền khi hover */
+}
+
+/* ------------------------------------------------------------------- */
+/* BƯỚC 5: Box Model cho Hình ảnh */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+
+    /* BƯỚC 5: Tối thiểu border, padding, border-radius */
+    border: 3px solid #007bff; /* Viền */
+    padding: 5px;             /* Đệm bên trong */
+    border-radius: 10px;      /* Góc bo tròn */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Thêm box model khác: đổ bóng */
+}
+
+/* ------------------------------------------------------------------- */
+/* BƯỚC 6: Grid Layout Example (sử dụng trong index.html) */
+.grid-layout-example {
+    display: grid; /* BƯỚC
